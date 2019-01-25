@@ -85,7 +85,54 @@
 		 	bottom: 0;
 		 }
 
+		 .foot-prints {
+		 	position: absolute;
+		 	top: 0;
+		 	height: 500px;
+		 	width: 500px;
+		 	animation: move 5s linear forwards infinite;
+		 }
+		 .footPrints .left-foot, .footPrints .right-foot  {
+		 	position: absolute;
+		 	height: 20px;
+		 	transform: rotate(20deg);
+		 	animation: blink 0.8s linear forwards alternate infinite;
+		 }
+		 .footPrints .left-foot {
+		 	left: 10px;
+		 }
+
+		 .footPrints .right-foot {
+		 	left: 20px;
+		 	animation-delay: 0.4s
+		 }
 		
+		@keyframes blink {
+			0% {
+				opacity: 0;
+			}
+			100% {
+				opacity: 1;
+			}
+		}
+
+		@keyframes move {
+			0% {
+				transform: translate(0,0);
+			}
+
+			33% {
+				transform: translate(100%,0);
+			}
+
+			66% {
+				transform: translate(100%,100%);
+			}
+
+			100% {
+				transform: translate(0,100%);
+			}
+		}
 
 
 	</style>
@@ -106,7 +153,11 @@
 			<div class="content">RIGHT</div>
 			<div class="fold-down"></div>
 		</div>
-		<div class="fold-down"></div>	
+		<div class="fold-down"></div>
+		<div class="footPrints">
+			<img src="left-foot.png" class="left-foot">
+			<img src="right-foot.png" class="right-foot">
+		</div	
 	</div>	
 
 
