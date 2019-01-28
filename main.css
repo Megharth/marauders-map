@@ -1,0 +1,132 @@
+body {
+			background: #343321;
+			position: absolute;
+			height: 100%;
+			width: 100%;
+			padding: 0;
+			margin: 0;
+			overflow: hidden;
+		}
+
+		/*MAP*/
+	 	.map {
+		 	position: absolute;
+		 	background: white;
+		 	height: 100%;
+		 	width: 100%;
+		 	top: 50%;
+		 	left: 50%;
+		 	transform: translate(-50%, -50%);
+		 }
+
+		 .center-piece {
+		 	position: absolute;
+		 	background: black;
+		 	height: 100%;
+		 	width: 30%;
+		 	left: 50%;
+		 	transform: translateX(-50%);
+		 }
+
+		 .left-far, .right-far, .left-near, .right-near {
+		 	height: 100%;
+		 	width: 15%;
+		 	position: absolute;
+		 	z-index: 2
+		 }
+
+		 .left-far {
+		 	left: 35%;
+		 	background: rgba(255, 0, 0, 0.5);
+		 	/*transform: rotateY(180deg) translateX(100%);*/
+		 	transform-origin: top left;
+		 }
+
+		 .right-far {
+		 	right: 35%;
+		 	background: rgba(0, 255, 0, 0.5);
+		 	/*transform: rotateY(180deg) translateX(-100%);*/
+		 	transform-origin: top right;
+		 }
+
+		 .left-near {
+		 	left: 20%;
+		 	background: rgba(0,0,255,0.5);
+		 }
+
+		 .right-near {
+		 	right: 20%;
+		 	background: rgba(0,0,255,0.5);
+		 }
+
+		 .center-piece .top-side, .center-piece .bottom-side {
+		 	height: 25%;
+		 	width: 100%;
+		 	position: absolute;
+		 }
+
+		 .center-piece .bottom-side {
+		 	bottom: 25%;
+		 	background: rgba(100, 0, 0, 0.5);
+		 	/*transform: rotateX(180deg);*/
+		 	/*transform-origin: bottom*/
+		 }
+
+		 .center-piece .top-side {
+		 	top: 25%;
+		 	background: rgba(0, 100, 0, 0.5);
+		 	/*transform: rotateX(180deg);*/
+		 	/*transform-origin: top*/
+		 }
+
+		 /*FOOTPRINTS*/
+		 .footPrints {
+		 	position: absolute;
+		 	display: block;
+		 	top: 0;
+		 }
+		 .footPrints .left-foot, .footPrints .right-foot  {
+		 	position: absolute;
+		 	height: 20px;
+		 	transform: rotate(20deg);
+		 	animation: blink 0.8s linear forwards alternate infinite; !important
+		 }
+		 .footPrints .left-foot {
+		 	left: 10px;
+		 }
+
+		 .footPrints .right-foot {
+		 	left: 20px;
+		 	animation-delay: 0.4s
+		 }
+		
+		@keyframes blink {
+			0% {
+				opacity: 0;
+			}
+			100% {
+				opacity: 1;
+			}
+		}
+
+		@keyframes move {
+			0% {
+				top: 0;
+				left: 0;
+			}
+
+			33% {
+				top: 0;
+				left: 100%;
+			}
+
+			66% {
+				top: 100%;
+				left: 100%;
+			}
+
+			100% {
+				top: 100%;
+				left: 0;
+			}
+		}
