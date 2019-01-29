@@ -9,7 +9,11 @@
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TimelineMax.min.js"></script>
 </head>
 <body>
-	<div class="map">
+	<!-- CURSOR -->
+	<div class="cursor"></div>
+	<!-- MAP -->
+	<div class="map" onclick="fold()">
+		
 		<div class="left-side">
 			<div class="left-near"></div>
 			<div class="left-far"></div>
@@ -22,91 +26,16 @@
 			<div class="right-near"></div>
 			<div class="right-far"></div>
 		</div>
+		<div class="text">
+			<div class="first-line">I solemnly swear that</div> 
+			<div class="second-line">I am upto no good</div>
+		</div>
+		<div class="info">Click to open/close the map</div>
 	</div>
-	<!-- <div class="cover">
-		<div class="fold-up"></div>
-		<div class="outer-left">
-			<div class="fold-up"></div>
-			<div class="content">LEFT</div>
-			<div class="fold-down"></div>
-		</div>
-		<div class="inner-left"></div>
-
-		<div class="inner-right"></div>
-		<div class="outer-right">
-			<div class="fold-up"></div>
-			<div class="content">RIGHT</div>
-			<div class="fold-down"></div> 
-		</div>
-		<div class="fold-down"></div>
-		<div class="footPrints">
-			<img src="left-foot.png" class="left-foot">
-			<img src="right-foot.png" class="right-foot">
-		</div>
-	</div>	 -->
 
 
+	<!-- SCRIPTS -->
 	
-	<script type="text/javascript">
-
-		let t1 = new TimelineMax({
-
-		})
-
-		t1.to('.left-far', 1.5, {
-			rotationY: 180,
-			transformOrigin: 'left',
-		})
-
-		t1.to('.right-far', 1.5, {
-			rotationY: 180,
-			transformOrigin: 'right' 
-		}, 0)
-
-		t1.to('.left-far', 0.5, {
-			x: '-100%'
-		})
-
-		t1.to('.right-far', 0.5, {
-			x: '100%'
-		}, 1.5)
-
-		t1.from('.right-near, .left-near', 0.5, {
-			autoAlpha: 0
-		}, 1.5)
-
-		t1.to('.top-side', 0.5, {
-			rotationX: 180,
-			transformOrigin: "top left"
-		})
-
-		t1.to('.bottom-side', 0.5, {
-			rotationX: 180,
-			transformOrigin: "bottom left"
-		}, "-=0.5")
-
-
-		/*t1.to('.fold-up, .fold-down, .content', 1, {
-			opacity: 1
-		}, "-=1.2")
-
-		t1.to('.fold-up', 1, {
-			rotationX: 180,
-			transformOrigin: 'left top'
-		},1.4)
-
-		t1.to('.fold-down', 1, {
-			rotationX: 180,
-			transformOrigin: 'left bottom'
-		},1.4)*/
-
-
-
-
-
-
-
-		// let outerLeft = document.querySelector(".outer-left");
-	</script>
+	<script type="text/javascript" src="main.js"></script>
 </body>
 </html>
